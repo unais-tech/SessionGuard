@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Alert</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .alert-box {
+            background: #16213e;
+            border: 2px solid #e74c3c;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 520px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(231,76,60,0.3);
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        p {
+            color: #a0aec0;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 12px 32px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .btn:hover { background: #c0392b; }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box">
+        <div class="icon blink">🚨</div>
+        <h1>Security Alert Detected!</h1>
+        <p>
+            Your session was flagged because it was accessed from a
+            <span class="highlight">different browser or location</span>
+            than where it was originally created.
+        </p>
+        <p>
+            This is a sign that your session token may have been
+            <span class="highlight">stolen and replayed</span>
+            by an attacker.
+        </p>
+        <p>
+            For your safety, <span class="highlight">your session has been terminated</span>
+            and the incident has been logged.
+        </p>
+        <a href="/login" class="btn">Login Again Securely</a>
+    </div>
+</body>
+</html>

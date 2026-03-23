@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SessionGuard — Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; padding: 40px; }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .admin { background: #fef3c7; color: #92400e; }
+        .user  { background: #e0e7ff; color: #3730a3; }
+        nav { margin-top: 24px; font-size: 14px; }
+        nav a {
+            color: #4f46e5;
+            text-decoration: none;
+            margin-right: 16px;
+        }
+        nav a:hover { text-decoration: underline; }
+        .divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Welcome, {{ username }}!
+            <span class="badge {{ role }}">{{ role }}</span>
+        </h2>
+        <p>You are successfully logged in.</p>
+        <p>Session is active and tracked in the database.</p>
+
+        <hr class="divider">
+
+        <nav>
+            <a href="/comments">Comments Page</a>
+            {% if role == "admin" %}
+            <a href="/admin-dashboard">Admin Dashboard</a>
+            {% endif %}
+            <a href="/logout">Logout</a>
+        </nav>
+    </div>
+</body>
+</html>
